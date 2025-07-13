@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Button from './Button';
-
+import bg from "@/app/assets/footerbg.jpg"
 export default function LastSection() {
   const bgRef = useRef(null);
   const sectionRef = useRef(null);
@@ -71,8 +71,7 @@ export default function LastSection() {
         ref={bgRef}
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('http://am.net.ua/wp-content/uploads/2019/09/DSC_5427_s.jpg?id=9600')",
+          backgroundImage:`url(${bg.src})`,
           transform: 'matrix(1, 0, 0, 1, 0, 0)',
           transition: 'transform 0.2s ease-out',
           zIndex: 0,

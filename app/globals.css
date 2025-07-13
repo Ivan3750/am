@@ -49,3 +49,25 @@ body {
   background-color: #F47820; /* Змінює колір фону на жовтий */
   color: white; /* Змінює колір тексту на чорний */
 }
+
+
+@keyframes ping-slow {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.online-orb {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10CC00;
+  margin-right: 6px;
+  animation: ping-slow 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}

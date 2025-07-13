@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         {children}
         </main>
         <Footer/>
-      <CustomCursor />
+     
       </body>
     </html>
   );

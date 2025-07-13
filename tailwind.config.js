@@ -11,6 +11,9 @@ theme: {
       manrope: 'var(--font-manrope)',
       abeezee: 'var(--font-abeezee)',
     },
+     animation: {
+        'ping-slow': 'ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite',
+      },
   },
 },
 
