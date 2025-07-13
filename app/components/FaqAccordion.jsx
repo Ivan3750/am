@@ -1,42 +1,36 @@
-// components/FaqAccordion.jsx
-"use client"
+"use client";
 import { useState } from "react";
+import { ChevronRight, ChevronDown } from "lucide-react";
 
 const faqData = [
   {
     question: "Чому вартість монтажу відео одразу не входить до пакету?",
     answer:
-      "Кожен відеоролик — це унікальний проект, який відображає індивідуальні запити та потреби клієнта. Деяким клієнтам може знадобитися простий монтаж, в той час як інші можуть шукати більш складні та творчі підходи. Тому ми враховуємо цю унікальність кожного проекту та надаємо можливість дозамовлення монтажу окремо, щоб забезпечити відповідність вашим потребам та бюджету.",
+      "Кожен відеоролик — це унікальний проєкт, який відображає індивідуальні запити клієнта. Тому монтаж оплачується окремо.",
   },
   {
     question: "Чи є у вас пакети послуг?",
-    answer:
-      "Так, ми пропонуємо декілька пакетів, які можуть бути адаптовані до ваших потреб та бюджету.",
+    answer: "Так, ми пропонуємо кілька пакетів на вибір, залежно від ваших потреб.",
   },
   {
     question: "Як я можу замовити послугу?",
-    answer:
-      "Ви можете зв’язатися з нами через форму на сайті або зателефонувати нам за вказаним номером.",
+    answer: "Зв’яжіться з нами через форму на сайті або за телефоном.",
   },
   {
-    question: "Чи пропонуєте ви послуги пост-продакшн?",
-    answer:
-      "Так, ми пропонуємо повний спектр послуг пост-продакшн, включаючи редагування, колірокорекцію, додавання спецефектів та звукове оформлення.",
+    question: "Чи пропонуєте ви послуги пост–продакшн?",
+    answer: "Так, повний спектр: монтаж, колірокорекція, спецефекти та звук.",
   },
   {
     question: "Чи можете ви гарантувати конфіденційність моїх відео?",
-    answer:
-      "Так, ми гарантуємо повну конфіденційність і не публікуємо ваші відео без вашої згоди.",
+    answer: "Так, ми гарантуємо повну конфіденційність без публікації без вашої згоди.",
   },
   {
     question: "Яка максимальна кількість людей може брати участь в інтерв'ю?",
-    answer:
-      "У нашій студії можна зняти інтерв’ю з максимальною кількістю трьох учасників одночасно.",
+    answer: "Максимум три учасники одночасно.",
   },
   {
     question: "Як тарифікується Zoom-інтерв'ю?",
-    answer:
-      "Тариф для Zoom-інтерв’ю такий самий, як для оренди з оператором, оскільки використовується тільки одна камера. Це робить процес зйомки схожим на звичайну оренду студії, тому ціна залишається такою ж.",
+    answer: "Тариф такий самий, як для зйомки в студії з оператором.",
   },
 ];
 
@@ -48,29 +42,35 @@ export default function FaqAccordion() {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-semibold text-center mb-10">FAQ – Часті питання</h2>
-      <div className="space-y-4 border-t border-gray-200">
+    <section className="max-w-[1360px] mx-auto px-4 py-16">
+      <h2 className="text-2xl font-semibold border-b-2 border-[#F47820] pb-2 mb-6">
+        Питання/відповіді
+      </h2>
+      <div className="space-y-2">
         {faqData.map((item, idx) => (
-          <div
-            key={idx}
-            className="border-b border-gray-200 cursor-pointer"
-          >
+          <div key={idx} className="border-b border-gray-200">
             <button
-              className={`w-full text-left py-4 px-2 font-medium text-lg flex justify-between items-center ${
-                openIndex === idx ? "text-[#F47820]" : "text-gray-800"
-              }`}
               onClick={() => toggle(idx)}
+              className="w-full flex justify-between items-center py-4 cursor-pointer hover:bg-gray-50 transition"
             >
-              {item.question}
-              <span className="text-2xl">
-                {openIndex === idx ? "−" : "+"}
-              </span>
+              <div className="flex items-center gap-4 text-left">
+                <div className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 font-medium">
+                  {idx + 1}
+                </div>
+                <span className="text-lg font-medium text-gray-800 hover:underline">
+                  {item.question}
+                </span>
+              </div>
+              {openIndex === idx ? (
+                <ChevronDown size={18} className="text-gray-600" />
+              ) : (
+                <ChevronRight size={18} className="text-gray-600" />
+              )}
             </button>
             <div
-              className={`transition-all duration-300 ease-in-out overflow-hidden px-2 text-gray-600 ${
-                openIndex === idx ? "max-h-[400px] pb-4" : "max-h-0"
-              }`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                openIndex === idx ? "max-h-96 pb-4" : "max-h-0"
+              } px-12 text-gray-600`}
             >
               <p>{item.answer}</p>
             </div>

@@ -21,21 +21,21 @@ import HeroParallaxSection from './components/HeroParallaxSection';
 export default function Home() {
   return (
     <>
-    <Hero/>
-      <Cases />
-      <Places />
-      <StudioService></StudioService>
-      <SkrewedImageGallery></SkrewedImageGallery>
-      <ProcessTimeline></ProcessTimeline>
-      <StudioContentSection />
-      <VideoSection></VideoSection>
-      <LocationSection></LocationSection>
-      <Text></Text>
+      <Hero/>
+       <Cases/>
+       <Places/>
+      <StudioService/>
+      <SkrewedImageGallery/>
+      <ProcessTimeline/>
+      <StudioContentSection/>
+      <VideoSection/>
+      <LocationSection/>
+      <Text/>
       <PricingPlansSection plans={plans.plan1}/>
       <PricingPlansSection plans={plans.plan2}/>
-      <Backstage></Backstage>
-<FaqAccordion />
-<HeroParallaxSection/>
+      <Backstage/>
+      <FaqAccordion/>
+      <HeroParallaxSection/>
     </>
   );
 }

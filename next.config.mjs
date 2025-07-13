@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['am.net.ua'],
+    domains: ['am.net.ua', "img.youtube.com"],
+  },
+  experimental: {
+    turbo: false,  // Вимикаємо turbopack
   },
 };
 

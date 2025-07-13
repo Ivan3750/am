@@ -2,6 +2,7 @@ import { Poppins, Manrope, ABeeZee, Open_Sans  } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CustomCursor from "./components/CustomCursor";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         {children}
         </main>
         <Footer/>
+      <CustomCursor />
       </body>
     </html>
   );
