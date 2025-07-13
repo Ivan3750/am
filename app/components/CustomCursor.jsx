@@ -1,75 +1,92 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [mouseX, setMouseX] = useState(0);
+  const [mouseY, setMouseY] = useState(0);
   const [hovered, setHovered] = useState(false);
+  const [clicks, setClicks] = useState([]);
+
+  // Плавний рух курсора
+  const smoothX = useSpring(mouseX, { stiffness: 300, damping: 20 });
+  const smoothY = useSpring(mouseY, { stiffness: 300, damping: 20 });
 
   useEffect(() => {
     const move = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      setMouseX(e.clientX - 25);
+      setMouseY(e.clientY - 25);
+    };
+
+    const click = (e) => {
+      const id = crypto.randomUUID();
+      setClicks((prev) => [...prev, { x: e.clientX, y: e.clientY, id }]);
+
+      setTimeout(() => {
+        setClicks((prev) => prev.filter((c) => c.id !== id));
+      }, 700);
     };
 
     window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-
-  useEffect(() => {
-    const hoverElements = document.querySelectorAll("a, button, .cursor-hover");
-
-    const addHover = () => setHovered(true);
-    const removeHover = () => setHovered(false);
-
-    hoverElements.forEach((el) => {
-      el.addEventListener("mouseenter", addHover);
-      el.addEventListener("mouseleave", removeHover);
-    });
+    window.addEventListener("click", click);
 
     return () => {
-      hoverElements.forEach((el) => {
-        el.removeEventListener("mouseenter", addHover);
-        el.removeEventListener("mouseleave", removeHover);
-      });
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("click", click);
+    };
+  }, []);
+
+  // Відстеження hover-елементів (динамічно)
+  useEffect(() => {
+    const handleHover = (e) => {
+      const target = e.target;
+      if (target.closest("a, button, .cursor-hover")) {
+        setHovered(true);
+      } else {
+        setHovered(false);
+      }
+    };
+
+    document.addEventListener("mouseover", handleHover);
+    document.addEventListener("mouseout", handleHover);
+
+    return () => {
+      document.removeEventListener("mouseover", handleHover);
+      document.removeEventListener("mouseout", handleHover);
     };
   }, []);
 
   return (
-    <AnimatePresence>
+    <>
+      {/* Основний кастомний курсор */}
       <motion.div
-        className="fixed top-0 left-0 z-[9999] pointer-events-none"
-        animate={{
-          x: position.x - 25,
-          y: position.y - 25,
-          scale: hovered ? 1.5 : 1,
-          backgroundColor: "transparent",
-          borderColor: "#000000",
-        }}
-        transition={{
-          type: "spring",
-          mass: 0.2, // Швидший відгук
-          stiffness: 300, // Жорсткість для швидкого слідування
-          damping: 20,
-        }}
         style={{
+          x: smoothX,
+          y: smoothY,
           width: 50,
           height: 50,
           borderRadius: "50%",
-          border: "1px solid",
+          border: "1px solid black",
           position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: 9999,
+          pointerEvents: "none",
           mixBlendMode: "difference",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          boxShadow: hovered ? "0 0 8px #F47820" : "none",
+          transition: "box-shadow 0.3s ease",
+          backdropFilter: "invert(1)",
         }}
       >
-        {/* Малий кружечок всередині */}
         <motion.div
           animate={{
             width: hovered ? 12 : 6,
             height: hovered ? 12 : 6,
-            backgroundColor: hovered ? "#F47820" : "#000000",
+            backgroundColor: hovered ? "#F47820" : "#000",
           }}
           transition={{
             type: "spring",
@@ -81,7 +98,39 @@ const CustomCursor = () => {
           }}
         />
       </motion.div>
-    </AnimatePresence>
+
+      {/* Ефекти кліку */}
+      {clicks.map((click) => (
+        <motion.div
+          key={click.id}
+          initial={{
+            x: click.x - 25,
+            y: click.y - 25,
+            opacity: 0.5,
+            scale: 0,
+          }}
+          animate={{
+            scale: 1.5,
+            opacity: 0,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
+          style={{
+            position: "fixed",
+            width: 50,
+            height: 50,
+            borderRadius: "50%",
+            backgroundColor: "rgba(150, 150, 150, 0.3)",
+            pointerEvents: "none",
+            top: 0,
+            left: 0,
+            zIndex: 9998,
+          }}
+        />
+      ))}
+    </>
   );
 };
 

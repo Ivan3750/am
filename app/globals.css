@@ -43,3 +43,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+::selection {
+  background-color: #F47820; /* Змінює колір фону на жовтий */
+  color: white; /* Змінює колір тексту на чорний */
+}
