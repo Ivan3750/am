@@ -3,26 +3,28 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
-
 const poppins = Poppins({
   variable: "--font-poppins",
-subsets: ["latin", "cyrillic"],
-   weight: ["400", "600", "700"]
+  subsets: ["latin", "latin-ext"], 
+  weight: ["400", "600", "700"],
 });
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["cyrillic"],
-   weight: ["400"]
-});
+
 const abeezee = ABeeZee({
   variable: "--font-abeezee",
-  subsets: ["cyrillic"],
-   weight: ["400",]
+  subsets: ["latin", "latin-ext"], 
+  weight: ["400"],
 });
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["cyrillic"], 
+  weight: ["400"],
+});
+
 const opensans = Open_Sans({
   variable: "--font-opensans",
   subsets: ["cyrillic"],
-   weight: ["400","800"]
+  weight: ["400", "800"],
 });
 
 
