@@ -3,6 +3,9 @@ import { IoDiamondOutline } from 'react-icons/io5'
 import { FaRegCommentDots } from 'react-icons/fa'
 import { LuClock9 } from 'react-icons/lu'
 import TxTAnim from './TxTAnim'
+import oscar from "@/app/assets/Oskar.png"
+import teleprompter from "@/app/assets/Teleprompter.png"
+import notime from "@/app/assets/notime.png"
 
 export default function StudioContentSection() {
   return (
@@ -11,7 +14,7 @@ export default function StudioContentSection() {
       <div className="container mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-10 max-w-[1400px] px-4 sm:px-8 lg:px-10 items-center">
         <div className="flex items-center justify-center">
           <Image
-            src="https://am.net.ua/wp-content/uploads/2024/05/Oskar.png"
+            src={oscar.src}
             alt="Oskar"
             width={600}
             height={600}
@@ -36,19 +39,19 @@ export default function StudioContentSection() {
 
       {/* 2nd row */}
       <div className="container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 mt-16 max-w-[1400px] px-4 sm:px-8 lg:px-10 items-center">
-        <div className="flex flex-col justify-center text-center">
-          <div className="w-full text-[32px] sm:text-[40px] text-[#444444] mb-3">
+        <div className="flex flex-col justify-center text-center space-y-5">
+          <TxTAnim tag="div" className="w-full text-[32px] sm:text-[40px] text-[#444444] mb-3">
             <FaRegCommentDots className="mx-auto" />
-          </div>
-          <blockquote className="text-[18px] sm:text-[20px] md:text-[22px] text-black leading-[1.6] font-[Open Sans]">
+          </TxTAnim>
+          <TxTAnim tag="blockquote" className="text-[18px] sm:text-[20px] md:text-[22px] text-black leading-[1.6] font-[Open Sans]">
             Перший раз перед камерою? Не хвилюйтесь, ми записуємо з першого дубля завдяки суфлеру 😉
             Просто підготуйте свій текст.
-          </blockquote>
+          </TxTAnim>
         </div>
 
         <div className="flex items-center justify-center">
           <Image
-            src="https://am.net.ua/wp-content/uploads/2025/01/Teleprompter.png"
+            src={teleprompter.src}
             alt="Teleprompter"
             width={800}
             height={822}
@@ -59,22 +62,22 @@ export default function StudioContentSection() {
 
       {/* 3rd row */}
       <div className="container mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-10 mt-16 max-w-[1400px] px-4 sm:px-8 lg:px-10 items-center">
-        <div className="flex flex-col justify-center text-center">
-          <div className="w-full text-[32px] sm:text-[40px] text-[#444444] mb-3">
+        <div className="flex flex-col justify-center text-center space-y-5">
+          <TxTAnim tag="div" className="w-full text-[32px] sm:text-[40px] text-[#444444] mb-3">
             <LuClock9 className="mx-auto" />
-          </div>
-          <blockquote className="text-[18px] sm:text-[20px] md:text-[22px] text-black leading-[1.6] font-[Open Sans]">
+          </TxTAnim>
+          <TxTAnim tag="blockquote" className="text-[18px] sm:text-[20px] md:text-[22px] text-black leading-[1.6] font-[Open Sans]">
             з 7:00 до 23:00 студія доступна для зйомки кожного дня.
             <br />
             Ми підлаштуємось під ваш графік 👌
             <br />
             Час точно знайдеться
-          </blockquote>
+          </TxTAnim>
         </div>
 
         <div className="flex items-center justify-center">
           <Image
-            src="https://am.net.ua/wp-content/uploads/2025/01/немає-часу-на-зйомки.png"
+            src={notime.src}
             alt="немає часу на зйомки"
             width={600}
             height={617}

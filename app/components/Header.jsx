@@ -70,10 +70,10 @@ export default function Header() {
             menuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
-          <a href="https://am.net.ua/studio/reels/#podcast" onClick={() => setMenuOpen(false)} className="text-2xl hover:text-[#3772ff] transition-colors">
+          <a href="#podcast" onClick={() => setMenuOpen(false)} className="text-2xl hover:text-[#3772ff] transition-colors">
             Локації для подкасту
           </a>
-          <a href="https://am.net.ua/studio/reels/#section1" onClick={() => setMenuOpen(false)} className="text-2xl hover:text-[#3772ff] transition-colors">
+          <a href="#price" onClick={() => setMenuOpen(false)} className="text-2xl hover:text-[#3772ff] transition-colors">
             Вартість
           </a>
           <a href="tel:+380679009242" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 text-lg opacity-50 hover:opacity-100 transition-opacity">

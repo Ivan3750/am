@@ -5,7 +5,7 @@ export default function PricingPlansSection({plans}) {
 
 
   return (
-    <section className="w-full py-16 px-4">
+    <section id="price" className="w-full py-16 px-4">
       <div className="max-w-[1360px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {plans.map((plan, i) => (
           <div
