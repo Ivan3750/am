@@ -95,29 +95,45 @@ const Cases = () => {
       </div>
 
       {selectedVideo && (
-        <div
-          className="fixed inset-0 bg-[#070707f7] flex items-center justify-center z-50 px-4 py-8"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className="relative w-full max-w-[800px] aspect-video bg-black  overflow-hidden ">
-            <iframe
-              src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1&rel=0`}
-              title={selectedVideo.title}
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              className="w-full h-full"
-              loading="lazy"
-            />
-            <button
-              onClick={() => setSelectedVideo(null)}
-              className="absolute top-3 right-3 text-white text-xl bg-black/60 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/80 transition"
-              aria-label="Закрити відео"
-            >
-              ×
-            </button>
-          </div>
-        </div>
+       <div
+  className="fixed inset-0 bg-[#070707de] flex items-center justify-center z-50 px-4 py-8"
+  role="dialog"
+  aria-modal="true"
+>
+  <div
+    className="relative w-full max-w-[90vw] md:max-w-[900px] aspect-video bg-white  p-4 md:p-10 rounded-lg shadow-lg"
+  >
+    <div className="text-center mb-4">
+      <p className="text-[#111111] font-[Manrope] text-[20px] md:text-[26px] font-bold">
+        {selectedVideo.title}
+      </p>
+      <p className="text-[#11111180] font-[Manrope] text-[12px] md:text-[13px] font-normal">
+        {selectedVideo.type}
+      </p>
+    </div>
+
+    <div className="relative w-full h-0 pb-[56.25%]">
+      <iframe
+        src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1&rel=0`}
+        title={selectedVideo.title}
+        allow="autoplay; fullscreen"
+        allowFullScreen
+        loading="lazy"
+        className="absolute top-0 left-0 w-full h-full rounded-md"
+      ></iframe>
+    </div>
+
+    <button
+      onClick={() => setSelectedVideo(null)}
+      className="absolute top-3 right-3 text-white text-xl bg-black/60 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/80 transition"
+      aria-label="Закрити відео"
+    >
+      ×
+    </button>
+  </div>
+</div>
+
+
       )}
     </section>
   );

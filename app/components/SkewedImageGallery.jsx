@@ -23,7 +23,7 @@ const images = [
 export default function SkewedImageGallery() {
   return (
     <div className="w-full overflow-x-hidden md:block hidden">
-      <div className="flex w-[110vw] -translate-x-[5vw] h-[300px] sm:h-[400px] md:h-[500px]">
+      <div className="flex w-[110vw] -translate-x-[5vw] h-[300px] sm:h-[400px] md:h-[500px] ml-2">
         {images.map((src, index) => (
           <div
             key={index}

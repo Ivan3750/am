@@ -1,17 +1,19 @@
-import React from "react";
+import React from 'react'
+import TxTAnim from './TxTAnim'
 
 const LocationSection = () => {
   return (
     <section className="w-full px-4 md:px-16 py-12 text-black text-center">
-      <div className="max-w-4xl mx-auto mb-10">
-        <h2 className="text-[22px] font-extrabold leading-[33px] font-[Open_Sans]">
+      <div className="mx-auto mb-10 flex flex-col space-y-2">
+        <TxTAnim tag="h2" className="text-[22px] font-extrabold leading-[33px] font-[Open_Sans]">
           Де знаходиться студія?
-        </h2>
-        <p className="mt-4 text-[22px] leading-[33px] font-[Open_Sans]">
+        </TxTAnim>
+
+        <TxTAnim tag="p" className="mt-4 text-[22px] leading-[33px] font-[Open_Sans]">
           м. Київ, вул. Дмитрівська 71
           <br />
           (м. Лук’янівська)
-        </p>
+        </TxTAnim>
       </div>
 
       <div className="max-w-[1360px] mx-auto w-full">
@@ -30,7 +32,7 @@ const LocationSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default LocationSection;
+export default LocationSection

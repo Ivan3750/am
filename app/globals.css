@@ -84,3 +84,23 @@ body {
   }
 }
 
+@keyframes slide-close {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-slide-close {
+  animation: slide-close 1s forwards ease-in-out;
+}
+@keyframes slide-close {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-slide-close {
+  animation: slide-close 1s forwards ease-in-out;
+}

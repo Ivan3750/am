@@ -1,22 +1,25 @@
 import Image from "next/image";
 import GallerySlider from "./GallerySlider";
-
+import l1 from "@/app/assets/location/reels_studio_17-1300x867.jpg"
+import l2 from "@/app/assets/location/reels_studio_15-1300x867.jpg"
+import l3 from "@/app/assets/location/008_2-1300x867.jpg"
+import l4 from "@/app/assets/location/reels_studio_5-1300x867.jpg"
 
 const images = [
   {
-    src: "https://am.net.ua/wp-content/uploads/2025/05/reels_studio_17-1300x867.jpg",
+    src: l1.src,
     alt: "Локація 1",
   },
   {
-    src: "https://am.net.ua/wp-content/uploads/2025/05/reels_studio_15-1300x867.jpg",
+    src: l2.src,
     alt: "Локація 2",
   },
   {
-    src: "https://am.net.ua/wp-content/uploads/2025/02/008_2-1300x867.jpg",
+    src: l3.src,
     alt: "Локація 3",
   },
   {
-    src: "https://am.net.ua/wp-content/uploads/2025/05/reels_studio_5-1300x867.jpg",
+    src: l4.src,
     alt: "Локація 4",
   },
 ];

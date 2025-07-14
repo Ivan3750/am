@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['am.net.ua', "img.youtube.com"],
+    domains: ['am.net.ua', 'img.youtube.com', 'cdn.sanity.io'],
   },
   experimental: {
-    turbo: false,  // Вимикаємо turbopack
+    turbo: false,
   },
 };
-
-
 
 export default nextConfig;

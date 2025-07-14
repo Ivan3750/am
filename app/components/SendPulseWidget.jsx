@@ -14,7 +14,7 @@ const SendPulseWidget = () => {
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
               js = d.createElement(s); js.id = id;
-              js.src = "https://web.webpushs.com/js/push/your_sendpulse_id.js";
+js.src = "https://web.webpushs.com/js/push/4468bf567100db975121ab7126f2cc80.js";
               fjs.parentNode.insertBefore(js, fjs);
             })(window, document, 'script', 'sendpulse-js');
           `,

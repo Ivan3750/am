@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect } from "react";
 
@@ -10,15 +10,7 @@ const SendPulseForm = () => {
     document.body.appendChild(script);
   }, []);
 
-  return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: `
-          <div id="sf-form-123456"></div>
-        `,
-      }}
-    />
-  );
+  return <div id="sf-form-4468bf567100db975121ab7126f2cc80"></div>;
 };
 
 export default SendPulseForm;
