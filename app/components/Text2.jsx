@@ -1,8 +1,8 @@
 export default function Text() {
   return (
-    <section className="py-16 text-center px-4 max-w-[1200px] mx-auto font-[Poppins]">
+    <section className="py-16 text-center px-4 max-w-[1380px] mx-auto font-[Poppins]">
       <h2
-        className="text-black font-semibold leading-[1.2] tracking-tight text-[3.75rem] sm:text-[4.5rem] md:text-[5rem]"
+        className="text-black font-semibold text-balance leading-[1.2] tracking-tight text-[3.75rem] sm:text-[4.5rem] md:text-[5rem]"
         style={{ maxWidth: "100%", margin: "0 auto" }}
       >
         Професійна зйомка подкастів та інтерв’ю у Reels Studio — створюйте якісний контент, який

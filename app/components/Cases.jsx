@@ -39,9 +39,15 @@ const Cases = () => {
 
   return (
     <section className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h2 className="text-[28px] sm:text-[32px] font-semibold text-black mb-8 text-center">
-        Знято у нас
-      </h2>
+    
+<div className="relative flex items-center w-full mb-8">
+  <div className="absolute top-1/2 left-0 w-full h-0.5 bg-orange-500 -translate-y-1/2" />
+  <div className="w-24 h-1 bg-[#f47820] mb-8"></div>
+  <h2 className="text-2xl font-semibold text-left text-[#111] mb-4">
+    Знято у нас
+  </h2>
+</div>
+
 
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map(({ label, value }) => (
