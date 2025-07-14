@@ -1,7 +1,8 @@
-import Image from "next/image";
-import { IoDiamondOutline } from "react-icons/io5";
-import { FaRegCommentDots } from "react-icons/fa";
-import { LuClock9 } from "react-icons/lu";
+import Image from 'next/image'
+import {IoDiamondOutline} from 'react-icons/io5'
+import {FaRegCommentDots} from 'react-icons/fa'
+import {LuClock9} from 'react-icons/lu'
+import TxTAnim from './TxTAnim'
 
 export default function StudioContentSection() {
   return (
@@ -19,15 +20,18 @@ export default function StudioContentSection() {
         </div>
 
         {/* Right column: quote */}
-        <div className="flex flex-col justify-center">
-          <div className="w-full text-[40px] text-[#444444] mb-5">
+        <div className="flex flex-col justify-center space-y-5">
+          <TxTAnim tag="div" className="w-full text-[40px] text-[#444444] mb-5">
             <IoDiamondOutline className="my-0 mx-auto" />
-          </div>
-          <blockquote className="text-[22px] text-black text-center leading-[1.6] font-[Open Sans]">
-            Гарний контент — це не витрата, а інвестиція у ваш бренд. Він працює
-            на вас постійно, приваблюючи нових клієнтів та збільшуючи
-            впізнаваність.
-          </blockquote>
+          </TxTAnim>
+
+          <TxTAnim
+            tag="blockquote"
+            className="text-[22px] text-black text-center leading-[1.6] font-[Open Sans]"
+          >
+            Гарний контент — це не витрата, а інвестиція у ваш бренд. Він працює на вас постійно,
+            приваблюючи нових клієнтів та збільшуючи впізнаваність.
+          </TxTAnim>
         </div>
       </div>
 
@@ -47,8 +51,8 @@ export default function StudioContentSection() {
             <FaRegCommentDots className="my-0 mx-auto" />
           </div>
           <blockquote className="text-[22px] text-black text-center leading-[1.6] font-[Open Sans]">
-            Перший раз перед камерою? Не хвилюйтесь, ми записуємо з першого
-            дубля завдяки суфлеру 😉 Просто підготуйте свій текст.
+            Перший раз перед камерою? Не хвилюйтесь, ми записуємо з першого дубля завдяки суфлеру 😉
+            Просто підготуйте свій текст.
           </blockquote>
         </div>
       </div>
@@ -57,7 +61,7 @@ export default function StudioContentSection() {
       <div className="container mx-auto grid grid-cols-2 gap-10 mt-16 max-w-[1400px]">
         <div className="flex flex-col justify-center">
           <div className="w-full text-[40px] text-[#444444] mb-5">
-<LuClock9 className="my-0 mx-auto" />
+            <LuClock9 className="my-0 mx-auto" />
           </div>
           <blockquote className="text-[22px] text-black text-center leading-[1.6] font-[Open Sans]">
             з 7:00 до 23:00 студія доступна для зйомки кожного дня.
@@ -79,5 +83,5 @@ export default function StudioContentSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

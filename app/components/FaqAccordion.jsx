@@ -43,21 +43,21 @@ export default function FaqAccordion() {
 
   return (
     <section className="max-w-[1360px] mx-auto px-4 py-16">
-      <h2 className="text-2xl font-semibold border-b-2 border-[#F47820] pb-2 mb-6">
+      <h2 className="text-2xl text-[black] font-semibold border-b-2 border-[#F47820] pb-2 mb-6">
         Питання/відповіді
       </h2>
-      <div className="space-y-2">
+      <div>
         {faqData.map((item, idx) => (
           <div key={idx} className="border-b border-gray-200">
             <button
               onClick={() => toggle(idx)}
-              className="w-full flex justify-between items-center py-4 cursor-pointer hover:bg-gray-50 transition"
+              className="w-full flex justify-between items-center py-[40px] cursor-pointer transition"
             >
-              <div className="flex items-center gap-4 text-left">
-                <div className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 font-medium">
+              <div className="flex items-center gap-6 text-left">
+                <div className="w-[40px] h-[40px] rounded-full border border-[#efefef] font-[Poppins] text-[20px] flex items-center justify-center text-gray-700 font-medium">
                   {idx + 1}
                 </div>
-                <span className="text-lg font-medium text-gray-800 hover:underline">
+                <span className="text-[20px] font-medium text-gray-800 hover:text-[#F47A24] font-[Poppins] ">
                   {item.question}
                 </span>
               </div>
@@ -68,8 +68,8 @@ export default function FaqAccordion() {
               )}
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                openIndex === idx ? "max-h-96 pb-4" : "max-h-0"
+              className={`overflow-hidden transition-all duration-300 ease-in-out pl-15 ${
+                openIndex === idx ? "max-h-96 pb-4 " : "max-h-0"
               } px-12 text-gray-600`}
             >
               <p>{item.answer}</p>

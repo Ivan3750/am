@@ -61,27 +61,26 @@ const CustomCursor = () => {
     <>
       {/* Основний кастомний курсор */}
       <motion.div
-        style={{
-          x: smoothX,
-          y: smoothY,
-          width: 50,
-          height: 50,
-          borderRadius: "50%",
-          border: "1px solid black",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: 9999,
-          pointerEvents: "none",
-          mixBlendMode: "difference",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: hovered ? "0 0 8px #F47820" : "none",
-          transition: "box-shadow 0.3s ease",
-          backdropFilter: "invert(1)",
-        }}
-      >
+  style={{
+    width: 50,
+    height: 50,
+    borderRadius: "50%",
+    border: "1px solid black",
+    position: "fixed",
+    zIndex: 9999,
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    boxShadow: hovered ? "0 0 8px #F47820" : "none",
+    transition: "box-shadow 0.3s ease",
+    backdropFilter: "invert(1)",
+    translateX: `${smoothX}`,
+    translateY: `${smoothY}`
+  }}
+ 
+>
+
         <motion.div
           animate={{
             width: hovered ? 12 : 6,

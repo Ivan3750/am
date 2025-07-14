@@ -6,7 +6,7 @@ import CustomCursor from "./components/CustomCursor";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin", "latin-ext"], 
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const abeezee = ABeeZee({
@@ -18,7 +18,7 @@ const abeezee = ABeeZee({
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["cyrillic"], 
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const opensans = Open_Sans({
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         {children}
         </main>
         <Footer/>
-     
+     <CustomCursor></CustomCursor>
       </body>
     </html>
   );

@@ -13,8 +13,9 @@ import Backstage from "./components/Backstage";
 import plans from "@/app/data/Pricing.json"
 import FaqAccordion from './components/FaqAccordion';
 import HeroParallaxSection from './components/HeroParallaxSection';
-import CustomCursor from './components/CustomCursor';
 import Contact from './components/Contact';
+import SendePulseWidget from './components/SendPulseWidget';
+import SendPulseForm from './components/SendePulseForm';
 
 
 
@@ -23,6 +24,8 @@ import Contact from './components/Contact';
 export default function Home() {
   return (
     <>
+
+
       <Hero/>
        <Cases/>
        <Places/>
@@ -38,8 +41,8 @@ export default function Home() {
       <Backstage/>
       <FaqAccordion/>
       <HeroParallaxSection/>
-       <CustomCursor />
        <Contact/>
+
     </>
   );
 }

@@ -94,11 +94,16 @@ const Cases = () => {
 
       {selectedVideo && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-[#070707f7]  flex items-center justify-center z-50"
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-[90%] md:w-[800px] aspect-video rounded overflow-hidden bg-black">
+          <div className="relative w-[90%] md:w-[800px] aspect-video  overflow-hidden bg-white">
+            <div className="text-center text-black">
+            <p>{selectedVideo.title}</p>
+            <p>{selectedVideo.type}</p>
+            </div>
+            <p></p>
             <iframe
               src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1&rel=0`}
               title={selectedVideo.title}
