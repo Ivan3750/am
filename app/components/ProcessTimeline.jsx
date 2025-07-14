@@ -40,7 +40,7 @@ const ProcessTimeline = () => {
               {/* Контент зліва для десктопу */}
               <div
                 className={`w-1/2 hidden md:block ${
-                  step.align === 'left' ? 'pr-8 text-right' : ''
+                  step.align === 'left' ? 'pr-8 md:text-right' : ''
                 }`}
               >
                 {step.align === 'left' && (
@@ -48,7 +48,7 @@ const ProcessTimeline = () => {
                     <h3 className="text-[20px] font-[Poppins] font-bold text-black">
                       {step.title}
                     </h3>
-                    <p className="text-[#444444] text-[14px] font-[Manrope] font-normal text-right">
+                    <p className="text-[#444444] text-[14px] font-[Manrope] font-normal md:text-right">
                       {step.description}
                     </p>
                   </div>
@@ -63,7 +63,7 @@ const ProcessTimeline = () => {
               {/* Контент праворуч для десктопу */}
               <div
                 className={`w-1/2 hidden md:block ${
-                  step.align === 'right' ? 'pl-8 text-left' : ''
+                  step.align === 'right' ? 'pl-8 md:text-left' : ''
                 }`}
               >
                 {step.align === 'right' && (
@@ -72,7 +72,7 @@ const ProcessTimeline = () => {
                     <h3 className="text-[20px] font-[Poppins] font-bold text-black">
                       {step.title}
                     </h3>
-                    <p className="text-[#444444] text-[14px] font-[Manrope] font-normal text-left">
+                    <p className="text-[#444444] text-[14px] font-[Manrope] font-normal md:text-left">
                       {step.description}
                     </p>
                   </div>
@@ -82,7 +82,7 @@ const ProcessTimeline = () => {
               {/* Контент для мобільних – завжди з правого боку від кружечка */}
               <div className="md:hidden flex-1 pl-4 text-left">
                 <h3 className="text-[20px] font-[Poppins] font-bold text-black">{step.title}</h3>
-                <p className="text-[#444444] text-[14px] font-[Manrope] font-normal text-right">
+                <p className="text-[#444444] text-[14px] font-[Manrope] font-normal md:text-right">
                   {step.description}
                 </p>
               </div>

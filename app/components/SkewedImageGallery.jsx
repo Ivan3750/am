@@ -2,19 +2,27 @@
 
 import Image from 'next/image';
 import i1 from "@/app/assets/skewed/IMG_9297-800x600.jpg"
+import i2 from "@/app/assets/skewed/dana_lakis_2-800x600.jpg"
+import i3 from "@/app/assets/skewed/008-800x600.jpg"
+import i4 from "@/app/assets/skewed/IMG_7438-800x600.jpg"
+import i5 from "@/app/assets/skewed/IMG_9355_clear-800x600.jpg"
+import i6 from "@/app/assets/skewed/IMG_0139-800x600.jpg"
+import i7 from "@/app/assets/skewed/DSC_4495-800x600.jpg"
+
 const images = [
   i1.src,
-  "https://am.net.ua/wp-content/uploads/2025/02/dana_lakis_2-800x600.jpg",
-  "https://am.net.ua/wp-content/uploads/2025/02/008-800x600.jpg",
-  "https://am.net.ua/wp-content/uploads/2025/01/IMG_7438-800x600.jpg",
-  "https://am.net.ua/wp-content/uploads/2025/01/IMG_9355_clear-800x600.jpg",
-  "https://am.net.ua/wp-content/uploads/2025/02/IMG_0139-800x600.jpg",
-  "https://am.net.ua/wp-content/uploads/2024/11/DSC_4495-800x600.jpg",
+  i2.src,
+  i3.src,
+  i4.src,
+  i5.src,
+  i6.src,
+  i7.src,
+
 ];
 
 export default function SkewedImageGallery() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden md:block hidden">
       <div className="flex w-[110vw] -translate-x-[5vw] h-[300px] sm:h-[400px] md:h-[500px]">
         {images.map((src, index) => (
           <div

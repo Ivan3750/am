@@ -24,11 +24,9 @@ import SendPulseForm from './components/SendePulseForm';
 export default function Home() {
   return (
     <>
-
-
       <Hero/>
-       <Cases/>
-       <Places/>
+      <Cases/>
+      <Places/>
       <StudioService/>
       <SkrewedImageGallery/>
       <ProcessTimeline/>
@@ -41,8 +39,7 @@ export default function Home() {
       <Backstage/>
       <FaqAccordion/>
       <HeroParallaxSection/>
-       <Contact/>
-
+      <Contact/>
     </>
   );
 }

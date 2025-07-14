@@ -6,9 +6,9 @@ const Contact = () => {
       href="https://t.me/golovaschuck_o"
       target="_blank"
       rel="nofollow"
-      className="bg-[#191919] gap-[12px] z-[999] items-center fixed bottom-0 left-4 h-[30px] w-[375px] py-[12px] px-[24px] flex justify-between rounded-t-[30px] box-content"
+      className="bg-[#191919] gap-[12px] z-[999] items-center fixed bottom-0 left-4 h-[30px] w-[300px]  md:w-[375px] py-[12px] px-[24px] flex justify-center  md:justify-between rounded-t-[30px] box-content"
     >
-      <div className="border-r-[#ffffff1a] border-r-[2px] pr-[12px]">
+      <div className="border-r-[#ffffff1a] border-r-[2px] pr-[12px] hidden md:block">
         Пишіть у телеграм 😉
       </div>
 

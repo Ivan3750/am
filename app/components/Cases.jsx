@@ -38,19 +38,21 @@ const Cases = () => {
   }, [cases, selectedCategory]);
 
   return (
-    <section className="max-w-[1360px] mx-auto px-4 py-8">
-      <h2 className="text-2xl font-semibold text-black mb-6">Знято у нас</h2>
+    <section className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 className="text-[28px] sm:text-[32px] font-semibold text-black mb-8 text-center">
+        Знято у нас
+      </h2>
 
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map(({ label, value }) => (
           <button
             key={value}
             onClick={() => setSelectedCategory(value)}
-            className={`text-sm border py-2 px-5 rounded transition 
+            className={`text-sm sm:text-base rounded-sm border py-2 px-4 sm:px-6 transition-all
               ${
                 selectedCategory === value
                   ? "bg-gray-100 text-black border-transparent"
-                  : "text-gray-700 border-gray-200 hover:text-black"
+                  : "text-gray-700 border-gray-300 hover:text-black"
               }`}
             aria-pressed={selectedCategory === value}
           >
@@ -70,11 +72,11 @@ const Cases = () => {
             <div
               key={_id}
               onClick={() => setSelectedVideo({ videoId, title, type })}
-              className="cursor-pointer transition-transform hover:scale-[1.01] bg-white"
+              className="cursor-pointer transition-transform hover:scale-[1.02] bg-white  overflow-hidden "
               role="button"
               tabIndex={0}
             >
-              <div className="relative w-full h-[300px] group">
+              <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] group">
                 <Image
                   src={thumbnail}
                   alt={title}
@@ -83,8 +85,8 @@ const Cases = () => {
                   className="object-cover transition group-hover:brightness-75"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition">
-                  <h3 className="text-lg font-semibold text-center px-2">{title}</h3>
-                  <p className="text-sm mt-1 text-center">{type}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-center px-2">{title}</h3>
+                  <p className="text-xs sm:text-sm mt-1 text-center">{type}</p>
                 </div>
               </div>
             </div>
@@ -94,16 +96,11 @@ const Cases = () => {
 
       {selectedVideo && (
         <div
-          className="fixed inset-0 bg-[#070707f7]  flex items-center justify-center z-50"
+          className="fixed inset-0 bg-[#070707f7] flex items-center justify-center z-50 px-4 py-8"
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-[90%] md:w-[800px] aspect-video  overflow-hidden bg-white">
-            <div className="text-center text-black">
-            <p>{selectedVideo.title}</p>
-            <p>{selectedVideo.type}</p>
-            </div>
-            <p></p>
+          <div className="relative w-full max-w-[800px] aspect-video bg-black  overflow-hidden ">
             <iframe
               src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1&rel=0`}
               title={selectedVideo.title}
@@ -114,7 +111,7 @@ const Cases = () => {
             />
             <button
               onClick={() => setSelectedVideo(null)}
-              className="absolute top-3 right-3 text-white text-xl bg-black/60 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/80"
+              className="absolute top-3 right-3 text-white text-xl bg-black/60 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/80 transition"
               aria-label="Закрити відео"
             >
               ×

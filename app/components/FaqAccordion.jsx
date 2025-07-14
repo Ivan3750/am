@@ -54,7 +54,7 @@ export default function FaqAccordion() {
               className="w-full flex justify-between items-center py-[40px] cursor-pointer transition"
             >
               <div className="flex items-center gap-6 text-left">
-                <div className="w-[40px] h-[40px] rounded-full border border-[#efefef] font-[Poppins] text-[20px] flex items-center justify-center text-gray-700 font-medium">
+                <div className="w-[40px] h-[40px] rounded-full hidden  border border-[#efefef] font-[Poppins] text-[20px] md:flex items-center justify-center text-gray-700 font-medium">
                   {idx + 1}
                 </div>
                 <span className="text-[20px] font-medium text-gray-800 hover:text-[#F47A24] font-[Poppins] ">
@@ -68,7 +68,7 @@ export default function FaqAccordion() {
               )}
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out pl-15 ${
+              className={`overflow-hidden transition-all duration-300 ease-in-out md:pl-15 ${
                 openIndex === idx ? "max-h-96 pb-4 " : "max-h-0"
               } px-12 text-gray-600`}
             >

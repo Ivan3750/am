@@ -25,8 +25,8 @@ export default function PricingPlansSection({plans}) {
 
             <div className="w-full border-y-1 border-[#ddd] p-[20px]">
               <p className="text-[#393c3e] mr-2 text-[60px] font-bold text-center">
-                {plan.oldPrice && <s className="">{plan.price}</s>}
-                {plan.oldPrice || plan.price}
+{/*                 {plan.oldPrice && <s className="">{plan.price}</s>}
+ */}                {plan.oldPrice || plan.price}
               </p>
               <p className="text-sm font-normal text-[#444444]  text-center">
                 {plan.period}
