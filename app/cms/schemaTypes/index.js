@@ -1,5 +1,4 @@
-import blogPost from './blogPost'
-import landingPage from './landingPage'
-import videoCase from './videoCase'
+import blogPost from "./blogPost";
+import videoCase from "./videoCase";
 
-export const schemaTypes = [landingPage, videoCase, blogPost]
+export const schemaTypes = [blogPost, videoCase]
