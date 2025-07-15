@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AnimatedCursor from "react-animated-cursor";
+
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin", "latin-ext"], 
